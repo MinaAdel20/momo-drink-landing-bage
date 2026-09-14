@@ -4,7 +4,7 @@ import type React from "react"
 
 import { motion, AnimatePresence, useSpring } from "framer-motion"
 import { useState } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Check, ChevronLeft, ChevronRight } from "lucide-react"
 import { TransparentCan } from "@/components/transparent-can"
 
 const flavors = [
@@ -73,6 +73,14 @@ export function FlavorCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [[page, direction], setPage] = useState([0, 0])
   const currentFlavor = flavors[currentIndex]
+  const [cartAdded, setCartAdded] = useState(false)
+  const [showToast, setShowToast] = useState(false)
+
+  const handleAddToCart = () => {
+    setCartAdded(true)
+    setShowToast(true)
+    window.setTimeout(() => setShowToast(false), 2600)
+  }
 
   const rotateX = useSpring(0, { stiffness: 150, damping: 20 })
   const rotateY = useSpring(0, { stiffness: 150, damping: 20 })
@@ -266,6 +274,7 @@ export function FlavorCarousel() {
                           style={{ backgroundColor: currentFlavor.accentColor, color: "#121212" }}
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
+                          onClick={handleAddToCart}
                         >
                           <motion.span
                             className="absolute inset-0 bg-white/20"
@@ -273,7 +282,10 @@ export function FlavorCarousel() {
                             whileHover={{ x: "100%" }}
                             transition={{ duration: 0.5 }}
                           />
-                          <span className="relative z-10">Add to Cart</span>
+                          <span className="relative z-10 inline-flex items-center justify-center gap-2">
+                            {cartAdded && <Check className="h-4 w-4" aria-hidden="true" />}
+                            {cartAdded ? "Added to Cart!" : "Add to Cart"}
+                          </span>
                         </motion.button>
                       )}
 
@@ -349,6 +361,25 @@ export function FlavorCarousel() {
           </div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {showToast && (
+          <motion.div
+            role="status"
+            aria-live="polite"
+            initial={{ opacity: 0, x: 24, y: 12 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            exit={{ opacity: 0, x: 24, y: 12 }}
+            transition={{ type: "spring", stiffness: 360, damping: 28 }}
+            className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-xl border border-[#00D2FF]/40 bg-[#0B132B] px-4 py-3 text-sm font-medium text-white shadow-[0_12px_40px_rgba(0,0,0,0.28)]"
+          >
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#00D2FF] text-[#0B132B]" aria-hidden="true">
+              <Check className="h-4 w-4" />
+            </span>
+            Added to Cart! Item successfully added.
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
