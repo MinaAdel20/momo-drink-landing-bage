@@ -6,6 +6,7 @@ import Link from "next/link"
 import { useLenis } from "lenis/react"
 import { Menu, X, Sun, Moon } from "lucide-react"
 import { useTheme } from "next-themes"
+import { InteractionModal } from "@/components/interaction-modal"
 
 const linkVariants = {
   hidden: { opacity: 0, y: -10 },
@@ -43,6 +44,7 @@ const mobileMenuVariants = {
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [modal, setModal] = useState<"discount" | null>(null)
   const { setTheme } = useTheme()
   const lenis = useLenis()
 
@@ -148,7 +150,7 @@ export function Navigation() {
             animate={{ x: ["-100%", "200%"] }}
             transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatDelay: 3 }}
           />
-          <span className="relative z-10">Get 25% Off</span>
+          <span onClick={() => setModal("discount")} className="relative z-10">Get 25% Off</span>
         </motion.button>
 
         <div className="flex items-center gap-2">
@@ -223,12 +225,13 @@ export function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                Get 25% Off
+                <span onClick={() => setModal("discount")}>Get 25% Off</span>
               </motion.button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+      <InteractionModal topic={modal} onClose={() => setModal(null)} />
     </motion.nav>
   )
 }

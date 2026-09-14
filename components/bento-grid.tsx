@@ -90,7 +90,7 @@ function FeatureCard({ feature, index }: { feature: (typeof features)[0]; index:
       />
 
       {/* Card */}
-      <div className="relative bg-[#1a1a1a] rounded-2xl p-5 border border-white/10 overflow-hidden h-full">
+      <div className="relative rounded-2xl border border-border bg-card p-5 text-foreground overflow-hidden h-full">
         {/* Shine effect on hover */}
         <motion.div
           className="absolute inset-0 opacity-0 group-hover:opacity-100"
@@ -130,7 +130,7 @@ function FeatureCard({ feature, index }: { feature: (typeof features)[0]; index:
           {/* Title with count-up feel */}
           <div className="flex-1">
             <motion.div
-              className="text-3xl font-black tracking-tight text-white"
+              className="text-3xl font-black tracking-tight text-foreground"
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -138,8 +138,8 @@ function FeatureCard({ feature, index }: { feature: (typeof features)[0]; index:
             >
               <span style={{ color: feature.accent }}>{feature.title}</span>
             </motion.div>
-            <h3 className="text-sm font-semibold text-white mt-1">{feature.subtitle}</h3>
-            <p className="text-xs text-white/50 mt-1 font-mono">{feature.description}</p>
+            <h3 className="text-sm font-semibold text-foreground mt-1">{feature.subtitle}</h3>
+            <p className="text-xs text-muted-foreground mt-1 font-mono">{feature.description}</p>
           </div>
 
           {/* Bottom accent line */}

@@ -4,8 +4,8 @@ import type React from "react"
 
 import { motion, AnimatePresence, useSpring } from "framer-motion"
 import { useState } from "react"
-import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { TransparentCan } from "@/components/transparent-can"
 
 const flavors = [
   {
@@ -195,12 +195,9 @@ export function FlavorCarousel() {
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
-                      <Image
-                        src={currentFlavor.image || "/placeholder.svg"}
-                        alt={currentFlavor.name}
-                        fill
-                        className={`object-contain ${currentFlavor.mystery ? "blur-sm grayscale" : ""}`}
-                      />
+                      {currentFlavor.mystery ? (
+                        <div className="relative flex h-full items-center justify-center opacity-60"><TransparentCan compact /><span className="absolute text-7xl font-black text-foreground/20">?</span></div>
+                      ) : <TransparentCan compact />}
                       {currentFlavor.mystery && (
                         <motion.div
                           className="absolute inset-0 flex items-center justify-center"

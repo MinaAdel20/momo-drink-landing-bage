@@ -3,6 +3,8 @@
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import { Sparkles, Dumbbell, Building2, Calendar } from "lucide-react"
+import { useState } from "react"
+import { InteractionModal } from "@/components/interaction-modal"
 
 const activations = [
   {
@@ -58,6 +60,7 @@ const itemVariants = {
 
 export function ActivationsSection() {
   const ref = useRef(null)
+  const [modal, setModal] = useState<"events" | "partners" | "quote" | "sponsor" | null>(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
@@ -126,7 +129,7 @@ export function ActivationsSection() {
                 scale: 1.02,
                 transition: { type: "spring", stiffness: 400, damping: 17 },
               }}
-              className="group bg-card border border-border rounded-2xl p-6 cursor-pointer relative overflow-hidden"
+              className="group bg-card border border-border rounded-2xl p-6 cursor-pointer relative overflow-hidden text-foreground"
             >
               <motion.div
                 className="absolute inset-0 bg-[#00D2FF]/0 group-hover:bg-[#00D2FF]"
@@ -142,14 +145,16 @@ export function ActivationsSection() {
                   <activation.icon className="w-5 h-5 text-[#121212] group-hover:text-[#00D2FF] transition-colors duration-300" />
                 </motion.div>
 
-                <h3 className="text-lg font-black text-white group-hover:text-[#121212] tracking-tight mb-2 transition-colors duration-300">
+                <h3 className="text-lg font-black text-foreground group-hover:text-[#0B132B] tracking-tight mb-2 transition-colors duration-300">
                   {activation.title}
                 </h3>
-                <p className="text-white/60 group-hover:text-[#121212]/60 font-mono text-xs leading-relaxed mb-4 transition-colors duration-300">
+                <p className="text-muted-foreground group-hover:text-[#0B132B]/70 font-mono text-xs leading-relaxed mb-4 transition-colors duration-300">
                   {activation.description}
                 </p>
 
                 <motion.button
+                  type="button"
+                  onClick={() => setModal(["events", "partners", "quote", "sponsor"][index] as "events" | "partners" | "quote" | "sponsor")}
                   className="flex items-center gap-2 text-[#00D2FF] group-hover:text-[#121212] font-bold text-xs tracking-wide transition-colors duration-300"
                   whileHover={{ x: 4 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -172,6 +177,7 @@ export function ActivationsSection() {
           ))}
         </motion.div>
       </div>
+      <InteractionModal topic={modal} onClose={() => setModal(null)} />
     </section>
   )
 }

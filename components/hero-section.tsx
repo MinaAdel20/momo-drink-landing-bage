@@ -1,8 +1,9 @@
 "use client"
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
-import { useRef } from "react"
-import Image from "next/image"
+import { useRef, useState } from "react"
+import { InteractionModal } from "@/components/interaction-modal"
+import { TransparentCan } from "@/components/transparent-can"
 
 const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 }
 
@@ -36,6 +37,7 @@ const scaleInVariants = {
 
 export function HeroSection() {
   const ref = useRef(null)
+  const [modal, setModal] = useState<"discount" | null>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -151,7 +153,8 @@ export function HeroSection() {
               className="flex flex-wrap gap-3 pt-2"
             >
               <motion.button
-                className="bg-[#00D2FF] text-foreground px-6 py-3 rounded-full font-bold text-sm tracking-wide flex items-center gap-2 group relative overflow-hidden"
+                onClick={() => setModal("discount")}
+                className="bg-[#00D2FF] text-[#0B132B] px-6 py-3 rounded-full font-bold text-sm tracking-wide flex items-center gap-2 group relative overflow-hidden"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -228,14 +231,7 @@ export function HeroSection() {
                   ease: "easeInOut",
                 }}
               >
-                <Image
-                  src="/images/momo-electric-blueberry.png"
-                  alt="Mo Mo Energy Drink - Blue Berry flavour"
-                  width={350}
-                  height={525}
-                  className="relative z-10 drop-shadow-2xl"
-                  priority
-                />
+                <TransparentCan />
               </motion.div>
             </motion.div>
           </motion.div>
@@ -261,6 +257,7 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
       </div>
+      <InteractionModal topic={modal} onClose={() => setModal(null)} />
     </section>
   )
 }
