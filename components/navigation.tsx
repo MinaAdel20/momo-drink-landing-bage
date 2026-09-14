@@ -86,7 +86,7 @@ export function Navigation() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <span className={scrolled ? "text-foreground" : "text-[#0B132B]"}>Mo</span>
+            <span className="text-foreground">Mo</span>
             <motion.span
               className="text-[#00D2FF]"
               animate={{
@@ -107,7 +107,7 @@ export function Navigation() {
               key={item.label}
               onClick={() => scrollToSection(item.href)}
               className={`text-sm font-medium tracking-wide transition-colors relative ${
-                scrolled ? "text-foreground/80 hover:text-[#00D2FF]" : "text-[#121212]/80 hover:text-[#121212]"
+                "text-foreground/80 hover:text-[#00D2FF]"
               }`}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}

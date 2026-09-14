@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
+  --background: #F2FBFF;
   --foreground: oklch(0.145 0 0);
   --card: oklch(0.98 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -43,8 +43,8 @@
   --navy: #0B132B;
   --soft: #F2FBFF;
   --charcoal: #0B132B;
-  --pineapple: oklch(0.9 0.15 90);
-  --coconut: oklch(0.95 0.03 90);
+  --pineapple: #00D2FF;
+  --coconut: #B9F3FF;
 }
 
 .dark {

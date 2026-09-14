@@ -60,10 +60,10 @@ export function HeroSection() {
     <section
       id="hero"
       ref={ref}
-      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white noise-overlay"
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-background text-foreground noise-overlay"
     >
       {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-[#00D2FF]/5 to-white" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-[#00D2FF]/8 to-background" />
 
       <motion.div
         className="absolute top-20 left-10 w-24 h-24 rounded-full bg-[#00D2FF]/20 blur-3xl"
@@ -93,7 +93,7 @@ export function HeroSection() {
               initial="hidden"
               animate="visible"
               custom={0}
-              className="inline-flex items-center gap-2 bg-[#121212] text-white px-3 py-1.5 rounded-full text-xs font-mono tracking-wider"
+              className="inline-flex items-center gap-2 bg-foreground text-background px-3 py-1.5 rounded-full text-xs font-mono tracking-wider"
             >
               <motion.span
                 className="w-2 h-2 bg-[#00D2FF] rounded-full"
@@ -106,7 +106,7 @@ export function HeroSection() {
             <div className="space-y-1 overflow-hidden">
               <motion.h1
                 style={{ x: textX1 }}
-                className="text-5xl md:text-7xl font-black tracking-tighter text-[#121212] leading-[0.9]"
+                className="text-5xl md:text-7xl font-black tracking-tighter text-foreground leading-[0.9]"
               >
                 <motion.span
                   variants={fadeUpVariants}
@@ -120,7 +120,7 @@ export function HeroSection() {
               </motion.h1>
               <motion.h1
                 style={{ x: textX2 }}
-                className="text-5xl md:text-7xl font-black tracking-tighter text-[#121212] leading-[0.9]"
+                className="text-5xl md:text-7xl font-black tracking-tighter text-foreground leading-[0.9]"
               >
                 <motion.span
                   variants={fadeUpVariants}
@@ -137,7 +137,7 @@ export function HeroSection() {
                 initial="hidden"
                 animate="visible"
                 custom={3}
-                className="text-lg md:text-xl font-mono text-[#121212]/60 tracking-tight pt-2 max-w-md"
+                className="text-lg md:text-xl font-mono text-foreground/60 tracking-tight pt-2 max-w-md"
               >
                 Zero sugar. Natural flavors. Clean energy that hits different.
               </motion.p>
@@ -151,7 +151,7 @@ export function HeroSection() {
               className="flex flex-wrap gap-3 pt-2"
             >
               <motion.button
-                className="bg-[#00D2FF] text-[#121212] px-6 py-3 rounded-full font-bold text-sm tracking-wide flex items-center gap-2 group relative overflow-hidden"
+                className="bg-[#00D2FF] text-foreground px-6 py-3 rounded-full font-bold text-sm tracking-wide flex items-center gap-2 group relative overflow-hidden"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -175,7 +175,7 @@ export function HeroSection() {
                 </motion.svg>
               </motion.button>
               <motion.button
-                className="border-2 border-[#121212] text-[#121212] px-6 py-3 rounded-full font-bold text-sm tracking-wide relative overflow-hidden"
+                className="border-2 border-[#00D2FF] text-foreground px-6 py-3 rounded-full font-bold text-sm tracking-wide relative overflow-hidden"
                 whileHover={{ scale: 1.02, backgroundColor: "#121212", color: "#fff" }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -194,7 +194,7 @@ export function HeroSection() {
               {["Zero Sugar", "75mg Caffeine", "Natural Flavours", "Vitamin B Rich"].map((benefit, i) => (
                 <motion.div
                   key={benefit}
-                  className="flex items-center gap-2 text-xs font-mono text-[#121212]/60"
+                  className="flex items-center gap-2 text-xs font-mono text-foreground/60"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.8 + i * 0.1 }}
@@ -209,7 +209,7 @@ export function HeroSection() {
           <motion.div style={{ y, scale }} className="relative flex justify-center">
             <motion.div variants={scaleInVariants} initial="hidden" animate="visible" className="relative">
               <motion.div
-                className="absolute inset-0 bg-[#84cc16]/30 blur-[80px] rounded-full scale-75"
+                className="absolute inset-0 bg-[#00D2FF]/30 blur-[80px] rounded-full scale-75"
                 animate={{
                   scale: [0.75, 0.85, 0.75],
                   opacity: [0.3, 0.5, 0.3],
@@ -229,8 +229,8 @@ export function HeroSection() {
                 }}
               >
                 <Image
-                  src="/images/drink2.png"
-                  alt="Mo Mo Energy Drink - Lemon Lime Flavour"
+                  src="/images/momo-electric-blueberry.png"
+                  alt="Mo Mo Energy Drink - Blue Berry flavour"
                   width={350}
                   height={525}
                   className="relative z-10 drop-shadow-2xl"
@@ -251,9 +251,9 @@ export function HeroSection() {
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
           >
-            <div className="w-5 h-8 border-2 border-[#121212]/30 rounded-full flex justify-center pt-1.5">
+            <div className="w-5 h-8 border-2 border-[#00D2FF]/50 rounded-full flex justify-center pt-1.5">
               <motion.div
-                className="w-1 h-2 bg-[#121212]/30 rounded-full"
+                className="w-1 h-2 bg-[#00D2FF]/70 rounded-full"
                 animate={{ y: [0, 6, 0], opacity: [1, 0.5, 1] }}
                 transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
               />

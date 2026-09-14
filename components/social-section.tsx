@@ -44,7 +44,7 @@ export function SocialSection() {
   const isInView = useInView(ref, { once: true, margin: "-50px" })
 
   return (
-    <section id="creators" className="relative py-16 bg-[#121212] overflow-hidden">
+    <section id="creators" className="relative py-16 bg-[#0B132B] dark:bg-[#0B132B] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

@@ -61,7 +61,7 @@ export function ActivationsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="distributors" className="relative py-16 bg-white overflow-hidden">
+    <section id="distributors" className="relative py-16 bg-background text-foreground overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -71,7 +71,7 @@ export function ActivationsSection() {
           className="text-center mb-10"
         >
           <motion.span
-            className="font-mono text-[#121212]/60 text-xs tracking-widest inline-block"
+            className="font-mono text-muted-foreground text-xs tracking-widest inline-block"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -79,7 +79,7 @@ export function ActivationsSection() {
           >
             ACTIVATIONS
           </motion.span>
-          <h2 className="text-3xl md:text-5xl font-black text-[#121212] tracking-tighter mt-2 overflow-hidden">
+          <h2 className="text-3xl md:text-5xl font-black text-foreground tracking-tighter mt-2 overflow-hidden">
             <motion.span
               className="inline-block"
               initial={{ y: 100 }}
@@ -100,7 +100,7 @@ export function ActivationsSection() {
             </motion.span>
           </h2>
           <motion.p
-            className="text-sm text-[#121212]/60 font-mono mt-2 max-w-xl mx-auto"
+            className="text-sm text-muted-foreground font-mono mt-2 max-w-xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -126,7 +126,7 @@ export function ActivationsSection() {
                 scale: 1.02,
                 transition: { type: "spring", stiffness: 400, damping: 17 },
               }}
-              className="group bg-[#121212] rounded-2xl p-6 cursor-pointer relative overflow-hidden"
+              className="group bg-card border border-border rounded-2xl p-6 cursor-pointer relative overflow-hidden"
             >
               <motion.div
                 className="absolute inset-0 bg-[#00D2FF]/0 group-hover:bg-[#00D2FF]"

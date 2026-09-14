@@ -10,21 +10,21 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const flavors = [
   {
     id: 1,
-    name: "Lemon Lime",
-    tagline: "Citrus Shock",
-    description: "A zesty explosion of natural lemon and lime that wakes you up instantly.",
-    image: "/images/drink2.png",
-    bgColor: "from-[#84cc16]/20 via-[#84cc16]/10 to-transparent",
-    accentColor: "#84cc16",
+    name: "Blue Berry",
+    tagline: "Berry Blast",
+    description: "A bright berry burst with clean energy that wakes you up instantly.",
+    image: "/images/momo-electric-blueberry.png",
+    bgColor: "from-[#00D2FF]/20 via-[#00D2FF]/10 to-transparent",
+    accentColor: "#00D2FF",
   },
   {
     id: 2,
-    name: "Pineapple Coconut",
-    tagline: "Tropical Rush",
-    description: "Island vibes with every sip. Transport yourself to paradise.",
-    image: "/images/drink1.png",
-    bgColor: "from-[#f59e0b]/20 via-[#f59e0b]/10 to-transparent",
-    accentColor: "#f59e0b",
+    name: "Berry Blast",
+    tagline: "Blue Berry",
+    description: "A bright berry burst with clean energy that wakes you up instantly.",
+    image: "/images/momo-electric-blueberry.png",
+    bgColor: "from-[#00D2FF]/20 via-[#00D2FF]/10 to-transparent",
+    accentColor: "#00D2FF",
   },
   {
     id: 3,
@@ -102,7 +102,7 @@ export function FlavorCarousel() {
   const prevFlavor = () => paginate(-1)
 
   return (
-    <section id="flavours" className="relative py-16 bg-white overflow-hidden">
+    <section id="flavours" className="relative py-16 bg-background text-foreground overflow-hidden">
       <motion.div
         className={`absolute inset-0 bg-gradient-to-br ${currentFlavor.bgColor}`}
         initial={{ opacity: 0 }}
@@ -120,7 +120,7 @@ export function FlavorCarousel() {
           className="text-center mb-10"
         >
           <motion.span
-            className="font-mono text-[#121212]/60 text-xs tracking-widest"
+            className="font-mono text-foreground/60 text-xs tracking-widest"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -128,7 +128,7 @@ export function FlavorCarousel() {
           >
             OUR FLAVOURS
           </motion.span>
-          <h2 className="text-3xl md:text-5xl font-black text-[#121212] tracking-tighter mt-2 overflow-hidden">
+          <h2 className="text-3xl md:text-5xl font-black text-foreground tracking-tighter mt-2 overflow-hidden">
             <motion.span
               className="inline-block"
               initial={{ y: 80 }}
@@ -156,7 +156,7 @@ export function FlavorCarousel() {
           <div className="flex items-center justify-center gap-6">
             <motion.button
               onClick={prevFlavor}
-              className="hidden md:flex w-12 h-12 rounded-full border-2 border-[#121212] items-center justify-center hover:bg-[#121212] hover:text-white transition-colors"
+              className="hidden md:flex w-12 h-12 rounded-full border-2 border-[#00D2FF] bg-[#0B132B] text-white items-center justify-center shadow-[0_0_18px_rgba(0,210,255,0.35)] hover:bg-[#00D2FF] hover:text-[#0B132B] transition-colors"
               whileHover={{ scale: 1.1, rotate: -5 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -176,7 +176,7 @@ export function FlavorCarousel() {
                 style={{ perspective: 1000 }}
               >
                 <motion.div
-                  className={`bg-white rounded-3xl p-6 md:p-8 border-2 border-[#121212]/10 shadow-xl ${currentFlavor.mystery ? "relative overflow-hidden" : ""}`}
+                  className={`bg-card rounded-3xl p-6 md:p-8 border-2 border-border shadow-xl ${currentFlavor.mystery ? "relative overflow-hidden" : ""}`}
                   style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
@@ -207,7 +207,7 @@ export function FlavorCarousel() {
                           animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.4, 0.2] }}
                           transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                         >
-                          <span className="text-7xl font-black text-[#121212]/20">?</span>
+                          <span className="text-7xl font-black text-foreground/20">?</span>
                         </motion.div>
                       )}
                     </motion.div>
@@ -224,7 +224,7 @@ export function FlavorCarousel() {
                           {currentFlavor.tagline}
                         </motion.span>
                         <motion.h3
-                          className="text-3xl md:text-4xl font-black text-[#121212] tracking-tighter mt-1"
+                          className="text-3xl md:text-4xl font-black text-foreground tracking-tighter mt-1"
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.3, type: "spring", stiffness: 100 }}
@@ -234,7 +234,7 @@ export function FlavorCarousel() {
                       </div>
 
                       <motion.p
-                        className="text-sm text-[#121212]/60 font-mono"
+                        className="text-sm text-foreground/60 font-mono"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4 }}
@@ -252,7 +252,7 @@ export function FlavorCarousel() {
                           {["Zero Sugar", "Metabolism Boost", "Natural Flavours", "Vitamin Rich"].map((badge) => (
                             <span
                               key={badge}
-                              className="px-2 py-1 bg-[#121212]/5 rounded-full text-xs font-mono text-[#121212]/60"
+                              className="px-2 py-1 bg-[#00D2FF]/10 border border-[#00D2FF]/20 rounded-full text-xs font-mono text-foreground/60"
                             >
                               {badge}
                             </span>
@@ -292,7 +292,7 @@ export function FlavorCarousel() {
                             animate={{ scale: [1, 1.3, 1], opacity: [1, 0.5, 1] }}
                             transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
                           />
-                          <span className="font-mono text-xs text-[#121212]/60">Dropping soon...</span>
+                          <span className="font-mono text-xs text-foreground/60">Dropping soon...</span>
                         </motion.div>
                       )}
                     </div>
@@ -303,7 +303,7 @@ export function FlavorCarousel() {
 
             <motion.button
               onClick={nextFlavor}
-              className="hidden md:flex w-12 h-12 rounded-full border-2 border-[#121212] items-center justify-center hover:bg-[#121212] hover:text-white transition-colors"
+              className="hidden md:flex w-12 h-12 rounded-full border-2 border-[#00D2FF] bg-[#0B132B] text-white items-center justify-center shadow-[0_0_18px_rgba(0,210,255,0.35)] hover:bg-[#00D2FF] hover:text-[#0B132B] transition-colors"
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -315,14 +315,14 @@ export function FlavorCarousel() {
           <div className="flex md:hidden justify-center gap-4 mt-6">
             <motion.button
               onClick={prevFlavor}
-              className="w-10 h-10 rounded-full border-2 border-[#121212] flex items-center justify-center"
+              className="w-10 h-10 rounded-full border-2 border-[#00D2FF] bg-[#0B132B] text-white flex items-center justify-center shadow-[0_0_14px_rgba(0,210,255,0.3)]"
               whileTap={{ scale: 0.9 }}
             >
               <ChevronLeft className="w-4 h-4" />
             </motion.button>
             <motion.button
               onClick={nextFlavor}
-              className="w-10 h-10 rounded-full border-2 border-[#121212] flex items-center justify-center"
+              className="w-10 h-10 rounded-full border-2 border-[#00D2FF] bg-[#0B132B] text-white flex items-center justify-center shadow-[0_0_14px_rgba(0,210,255,0.3)]"
               whileTap={{ scale: 0.9 }}
             >
               <ChevronRight className="w-4 h-4" />

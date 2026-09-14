@@ -64,7 +64,7 @@ export function LifestyleSection() {
   const isCardsInView = useInView(cardsRef, { once: true, margin: "-50px" })
 
   return (
-    <section className="relative py-32 bg-[#121212] overflow-hidden">
+    <section className="relative py-32 bg-[#0B132B] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

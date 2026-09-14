@@ -162,8 +162,8 @@ export function BentoGrid() {
   const isInView = useInView(ref, { once: true, margin: "-50px" })
 
   return (
-    <section id="formula" className="relative py-16 bg-[#121212] overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#121212] via-[#0a0a0a] to-[#121212]" />
+    <section id="formula" className="relative py-16 bg-[#0B132B] dark:bg-[#0B132B] text-white overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0B132B] via-[#0B132B] to-[#0B132B]" />
 
       <div ref={ref} className="max-w-5xl mx-auto px-6 relative z-10">
         <motion.div
