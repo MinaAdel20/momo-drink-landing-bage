@@ -178,8 +178,10 @@ export function HeroSection() {
                 </motion.svg>
               </motion.button>
               <motion.button
-                className="border-2 border-[#00D2FF] text-foreground px-6 py-3 rounded-full font-bold text-sm tracking-wide relative overflow-hidden"
-                whileHover={{ scale: 1.02, backgroundColor: "#121212", color: "#fff" }}
+                type="button"
+                onClick={() => document.getElementById("flavours")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+                className="border-2 border-[#00D2FF] bg-[#0B132B] text-white px-6 py-3 rounded-full font-bold text-sm tracking-wide relative overflow-hidden"
+                whileHover={{ scale: 1.02, backgroundColor: "#172554" }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >

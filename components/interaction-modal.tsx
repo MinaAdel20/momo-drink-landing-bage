@@ -54,7 +54,7 @@ export function InteractionModal({ topic, onClose }: { topic: ModalTopic | null;
         </div>
         {submitted ? (
           <div className="mt-6 rounded-2xl border border-[#00D2FF]/40 bg-[#00D2FF]/10 p-5 text-center">
-            <p className="font-bold text-[#00D2FF]">{isDiscount ? "Code MOMO25 Applied Successfully!" : "Thank you for reaching out!"}</p>
+            <p className="font-bold text-[#00D2FF]">{isDiscount ? "🎉 Congratulations! You unlocked 25% OFF! Use code: MOMO25 at checkout." : "Thank you for reaching out!"}</p>
             <button type="button" onClick={onClose} className="mt-4 text-sm font-bold text-foreground underline decoration-[#00D2FF] underline-offset-4">Close</button>
           </div>
         ) : topic === "events" ? (

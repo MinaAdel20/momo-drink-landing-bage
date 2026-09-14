@@ -3,6 +3,8 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 
+const portfolioUrl = "https://minaadel20.github.io/MYPORTFOLIO/"
+
 export function Footer() {
   return (
     <footer id="careers" className="border-t border-border bg-background">
@@ -12,10 +14,10 @@ export function Footer() {
         </Link>
         <span className="font-mono text-xs">© 2026 Mo Mo</span>
         <nav aria-label="Legal" className="flex items-center gap-4 text-xs font-medium">
-          <motion.a href="#privacy" whileHover={{ color: "#00D2FF" }}>
+          <motion.a href={portfolioUrl} target="_blank" rel="noreferrer" whileHover={{ color: "#00D2FF" }}>
             Privacy
           </motion.a>
-          <motion.a href="#terms" whileHover={{ color: "#00D2FF" }}>
+          <motion.a href={portfolioUrl} target="_blank" rel="noreferrer" whileHover={{ color: "#00D2FF" }}>
             Terms
           </motion.a>
         </nav>

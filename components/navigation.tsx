@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import Link from "next/link"
 import { useLenis } from "lenis/react"
 import { Menu, X, Sun, Moon } from "lucide-react"
 import { useTheme } from "next-themes"
@@ -82,7 +81,12 @@ export function Navigation() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
+        <a
+          href="https://minaadel20.github.io/MYPORTFOLIO/"
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-2"
+        >
           <motion.span
             className="text-2xl font-black tracking-tighter"
             whileHover={{ scale: 1.05 }}
@@ -101,7 +105,7 @@ export function Navigation() {
               Mo
             </motion.span>
           </motion.span>
-        </Link>
+        </a>
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((item, i) => (
@@ -129,6 +133,8 @@ export function Navigation() {
         </div>
 
         <motion.button
+          type="button"
+          onClick={() => setModal("discount")}
           className="hidden md:block bg-[#00D2FF] text-[#121212] px-6 py-2.5 rounded-full font-bold text-sm tracking-wide relative overflow-hidden"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -150,7 +156,7 @@ export function Navigation() {
             animate={{ x: ["-100%", "200%"] }}
             transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatDelay: 3 }}
           />
-          <span onClick={() => setModal("discount")} className="relative z-10">Get 25% Off</span>
+          <span className="relative z-10">Get 25% Off</span>
         </motion.button>
 
         <div className="flex items-center gap-2">
