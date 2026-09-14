@@ -6,12 +6,12 @@ import { Instagram } from "lucide-react"
 import Image from "next/image"
 
 const instagramPosts = [
-  { image: "/energy-drink-lifestyle-gym-workout.jpg", likes: "2.4k" },
-  { image: "/content-creator-streaming-setup-neon.jpg", likes: "1.8k" },
-  { image: "/skateboarder-urban-street-sunset.jpg", likes: "3.2k" },
-  { image: "/student-studying-library-late-night.jpg", likes: "956" },
-  { image: "/entrepreneur-startup-office-meeting.jpg", likes: "1.5k" },
-  { image: "/athlete-fitness-morning-routine.jpg", likes: "2.1k" },
+  { image: "/images/gallery-training.png", likes: "2.4k" },
+  { image: "/images/gallery-creator.png", likes: "1.8k" },
+  { image: "/images/gallery-fitness.png", likes: "3.2k" },
+  { image: "/images/gallery-study.png", likes: "956" },
+  { image: "/images/gallery-team.png", likes: "1.5k" },
+  { image: "/images/gallery-training.png", likes: "2.1k" },
 ]
 
 const containerVariants = {
@@ -137,7 +137,7 @@ export function SocialSection() {
           transition={{ delay: 0.5 }}
         >
           <motion.a
-            href="https://instagram.com/momoenergy.in"
+            href="https://minaadel20.github.io/MYPORTFOLIO/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-[#00D2FF] text-[#121212] px-6 py-3 rounded-full font-bold text-sm tracking-wide relative overflow-hidden group"
