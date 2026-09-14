@@ -63,10 +63,10 @@ export function HeroSection() {
       className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white noise-overlay"
     >
       {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-[#AFFF00]/5 to-white" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-[#00D2FF]/5 to-white" />
 
       <motion.div
-        className="absolute top-20 left-10 w-24 h-24 rounded-full bg-[#AFFF00]/20 blur-3xl"
+        className="absolute top-20 left-10 w-24 h-24 rounded-full bg-[#00D2FF]/20 blur-3xl"
         animate={{
           x: [0, 30, 0],
           y: [0, -20, 0],
@@ -75,7 +75,7 @@ export function HeroSection() {
         transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-40 right-20 w-32 h-32 rounded-full bg-[#AFFF00]/10 blur-3xl"
+        className="absolute bottom-40 right-20 w-32 h-32 rounded-full bg-[#00D2FF]/10 blur-3xl"
         animate={{
           x: [0, -40, 0],
           y: [0, 30, 0],
@@ -96,7 +96,7 @@ export function HeroSection() {
               className="inline-flex items-center gap-2 bg-[#121212] text-white px-3 py-1.5 rounded-full text-xs font-mono tracking-wider"
             >
               <motion.span
-                className="w-2 h-2 bg-[#AFFF00] rounded-full"
+                className="w-2 h-2 bg-[#00D2FF] rounded-full"
                 animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
                 transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
               />
@@ -127,7 +127,7 @@ export function HeroSection() {
                   initial="hidden"
                   animate="visible"
                   custom={2}
-                  className="inline-block text-[#AFFF00]"
+                  className="inline-block text-[#00D2FF]"
                 >
                   AMBITION
                 </motion.span>
@@ -151,7 +151,7 @@ export function HeroSection() {
               className="flex flex-wrap gap-3 pt-2"
             >
               <motion.button
-                className="bg-[#AFFF00] text-[#121212] px-6 py-3 rounded-full font-bold text-sm tracking-wide flex items-center gap-2 group relative overflow-hidden"
+                className="bg-[#00D2FF] text-[#121212] px-6 py-3 rounded-full font-bold text-sm tracking-wide flex items-center gap-2 group relative overflow-hidden"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -199,7 +199,7 @@ export function HeroSection() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.8 + i * 0.1 }}
                 >
-                  <div className="w-1.5 h-1.5 bg-[#AFFF00] rounded-full" />
+                  <div className="w-1.5 h-1.5 bg-[#00D2FF] rounded-full" />
                   {benefit}
                 </motion.div>
               ))}
@@ -230,7 +230,7 @@ export function HeroSection() {
               >
                 <Image
                   src="/images/drink2.png"
-                  alt="GiGi Energy Drink - Lemon Lime Flavour"
+                  alt="Mo Mo Energy Drink - Lemon Lime Flavour"
                   width={350}
                   height={525}
                   className="relative z-10 drop-shadow-2xl"

@@ -13,7 +13,7 @@ const lifestyleImages = [
 ]
 
 const socialPosts = [
-  { handle: "@creativekatie", text: "GiGi got me through my entire album production. No cap 🔥", likes: "2.4k" },
+  { handle: "@creativekatie", text: "Mo Mo got me through my entire album production. No cap 🔥", likes: "2.4k" },
   { handle: "@fitnessjay", text: "Zero sugar but 100% energy. This is the one.", likes: "1.8k" },
   { handle: "@techbro_sam", text: "Finally an energy drink that doesn't taste like chemicals", likes: "956" },
 ]
@@ -74,7 +74,7 @@ export function LifestyleSection() {
           className="text-center mb-16"
         >
           <motion.span
-            className="font-mono text-[#AFFF00] text-sm tracking-widest inline-block"
+            className="font-mono text-[#00D2FF] text-sm tracking-widest inline-block"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -90,10 +90,10 @@ export function LifestyleSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1], delay: 0.15 }}
             >
-              GIGI ON THE{" "}
+              MOMO ON THE{" "}
             </motion.span>
             <motion.span
-              className="text-[#AFFF00] inline-block"
+              className="text-[#00D2FF] inline-block"
               initial={{ y: 100 }}
               whileInView={{ y: 0 }}
               viewport={{ once: true }}
@@ -135,7 +135,7 @@ export function LifestyleSection() {
                   transition={{ duration: 0.6 }}
                 />
                 <motion.div
-                  className="absolute inset-0 bg-[#AFFF00]/0 group-hover:bg-[#AFFF00]/20"
+                  className="absolute inset-0 bg-[#00D2FF]/0 group-hover:bg-[#00D2FF]/20"
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                   transition={{ duration: 0.4 }}
@@ -165,18 +165,18 @@ export function LifestyleSection() {
             >
               <div className="flex items-center gap-3 mb-4">
                 <motion.div
-                  className="w-10 h-10 rounded-full bg-[#AFFF00]/20 flex items-center justify-center"
+                  className="w-10 h-10 rounded-full bg-[#00D2FF]/20 flex items-center justify-center"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                  <span className="text-[#AFFF00] font-bold text-sm">{post.handle.charAt(1).toUpperCase()}</span>
+                  <span className="text-[#00D2FF] font-bold text-sm">{post.handle.charAt(1).toUpperCase()}</span>
                 </motion.div>
                 <span className="font-mono text-white/60 text-sm">{post.handle}</span>
               </div>
               <p className="text-white text-lg leading-relaxed">{post.text}</p>
               <motion.div
                 className="flex items-center gap-2 mt-4 text-white/40 font-mono text-sm"
-                whileHover={{ color: "#AFFF00" }}
+                whileHover={{ color: "#00D2FF" }}
                 transition={{ duration: 0.2 }}
               >
                 <motion.svg

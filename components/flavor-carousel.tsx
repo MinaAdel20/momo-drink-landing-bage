@@ -32,8 +32,8 @@ const flavors = [
     tagline: "Coming Soon",
     description: "Something epic is brewing... Stay tuned.",
     image: "/mystery-energy-drink-can-silhouette.jpg",
-    bgColor: "from-[#AFFF00]/20 via-[#AFFF00]/5 to-transparent",
-    accentColor: "#AFFF00",
+    bgColor: "from-[#00D2FF]/20 via-[#00D2FF]/5 to-transparent",
+    accentColor: "#00D2FF",
     mystery: true,
   },
 ]
@@ -288,7 +288,7 @@ export function FlavorCarousel() {
                           transition={{ delay: 0.5 }}
                         >
                           <motion.div
-                            className="w-2 h-2 bg-[#AFFF00] rounded-full"
+                            className="w-2 h-2 bg-[#00D2FF] rounded-full"
                             animate={{ scale: [1, 1.3, 1], opacity: [1, 0.5, 1] }}
                             transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
                           />

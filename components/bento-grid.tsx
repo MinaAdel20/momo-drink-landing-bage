@@ -12,7 +12,7 @@ const features = [
     title: "75mg",
     subtitle: "Natural Caffeine",
     description: "Clean energy without the crash",
-    accent: "#AFFF00",
+    accent: "#00D2FF",
   },
   {
     icon: Flame,
@@ -33,7 +33,7 @@ const features = [
     title: "B12",
     subtitle: "Vitamin Complex",
     description: "Essential nutrients for energy",
-    accent: "#AFFF00",
+    accent: "#00D2FF",
   },
 ]
 
@@ -173,7 +173,7 @@ export function BentoGrid() {
           className="text-center mb-10"
         >
           <motion.span
-            className="inline-block font-mono text-[#AFFF00] text-[10px] tracking-[0.3em] uppercase"
+            className="inline-block font-mono text-[#00D2FF] text-[10px] tracking-[0.3em] uppercase"
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
             transition={{ delay: 0.1 }}
@@ -194,7 +194,7 @@ export function BentoGrid() {
 
           {/* Animated underline */}
           <motion.div
-            className="h-[2px] w-12 bg-[#AFFF00] mx-auto mt-3 rounded-full"
+            className="h-[2px] w-12 bg-[#00D2FF] mx-auto mt-3 rounded-full"
             initial={{ scaleX: 0 }}
             animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
             transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
