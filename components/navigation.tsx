@@ -43,8 +43,13 @@ const mobileMenuVariants = {
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const { resolvedTheme, setTheme } = useTheme()
   const lenis = useLenis()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -159,7 +164,11 @@ export function Navigation() {
             className="rounded-full border border-current/20 p-2 text-foreground transition-colors hover:text-[#00D2FF]"
             whileTap={{ scale: 0.9 }}
           >
-            {resolvedTheme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            {mounted ? (
+              resolvedTheme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />
+            ) : (
+              <span className="block h-4 w-4" aria-hidden="true" />
+            )}
           </motion.button>
 
           <motion.button
